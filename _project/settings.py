@@ -10,10 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
-from pathlib import Path
 import os
 from pathlib import Path
-from dotenv import load_dotenv, find_dotenv
+
+from dotenv import find_dotenv, load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 dotenv_path = find_dotenv()
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
 
-
+    'apps.geozones'
 ]
 
 MIDDLEWARE = [
