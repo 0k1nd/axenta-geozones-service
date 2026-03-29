@@ -12,6 +12,10 @@ RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
     netcat-traditional \
+    binutils \
+    libproj-dev \
+    gdal-bin \
+    libgdal-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 

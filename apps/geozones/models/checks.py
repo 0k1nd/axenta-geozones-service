@@ -1,8 +1,6 @@
 from django.contrib.gis.db import models as gis_models
 from django.db import models
 
-from apps.geozones.models import Geozone
-
 
 class Check(models.Model):
     device_id = models.CharField(
@@ -15,9 +13,8 @@ class Check(models.Model):
     lon = models.FloatField(
         verbose_name='долгота'
     )
-    point = gis_models.PointField(srid=4326)
     matched_geozone = models.ForeignKey(
-        Geozone,
+        "geozones.Geozone",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
