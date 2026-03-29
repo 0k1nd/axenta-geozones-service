@@ -4,4 +4,23 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "django>=6.0.3",
+    "django-environ>=0.13.0",
+    "djangorestframework>=3.17.1",
+    "drf-spectacular>=0.29.0",
+    "psycopg2-binary>=2.9.11",
+    "ruff>=0.15.8",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = ["migrations"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"

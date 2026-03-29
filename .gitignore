@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtualenv / uv
+.venv/
+venv/
+env/
+.uv/
+
+# Ruff
+.ruff_cache/
+
+# Django
+staticfiles/
+media/
+*.log
+
+# VSCode / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# OS
+.DS_Store
+Thumbs.db
