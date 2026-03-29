@@ -8,7 +8,10 @@ dependencies = [
     "django>=6.0.3",
     "django-environ>=0.13.0",
     "djangorestframework>=3.17.1",
+    "dotenv>=0.9.9",
     "drf-spectacular>=0.29.0",
+    "drf-yasg>=1.21.15",
+    "gunicorn>=25.3.0",
     "psycopg2-binary>=2.9.11",
     "ruff>=0.15.8",
 ]
