@@ -1,14 +1,9 @@
-from dataclasses import dataclass
 from typing import Optional
 
 from django.contrib.gis.geos import Point
 
 from apps.geozones.models import Check, Geozone
-
-
-@dataclass
-class CheckResult:
-    check: Check
+from apps.geozones.schemas import CheckResult
 
 
 def build_point(*, lat: float, lon: float) -> Point:

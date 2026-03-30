@@ -33,7 +33,6 @@ class GeozoneListCreateView(generics.ListCreateAPIView):
 class CheckListView(generics.ListAPIView):
     queryset = Check.objects.select_related("matched_geozone")
     serializer_class = CheckSerializer
-    filter_backends = [DjangoFilterBackend]
     filterset_class = CheckFilter
 
 @extend_schema_view(

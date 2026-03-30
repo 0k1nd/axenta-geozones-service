@@ -28,8 +28,14 @@ class CheckPointInputSerializer(serializers.Serializer):
     lon = serializers.FloatField()
 
 
+class MatchedGeozoneSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Geozone
+        fields = ("id", "name")
+
+
 class CheckSerializer(serializers.ModelSerializer):
-    matched_geozone = serializers.SerializerMethodField()
+    matched_geozone = MatchedGeozoneSerializer(read_only=True)
 
     class Meta:
         model = Check
@@ -42,13 +48,3 @@ class CheckSerializer(serializers.ModelSerializer):
             "matched_geozone",
             "created_at",
         )
-
-    def get_matched_geozone(self, obj):
-        geozone = obj.matched_geozone
-        if geozone is None:
-            return None
-
-        return {
-            "id": geozone.id,
-            "name": geozone.name,
-        }

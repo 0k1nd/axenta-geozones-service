@@ -10,7 +10,7 @@ class Check(models.Model):
         verbose_name='Широта'
     )
     lon = models.FloatField(
-        verbose_name='долгота'
+        verbose_name='Долгота'
     )
     matched_geozone = models.ForeignKey(
         "geozones.Geozone",
