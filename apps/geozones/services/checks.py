@@ -11,12 +11,7 @@ def build_point(*, lat: float, lon: float) -> Point:
 
 
 def find_geozone_for_point(point: Point) -> Optional[Geozone]:
-    return (
-        Geozone.objects
-        .filter(geometry__covers=point)
-        .order_by("id")
-        .first()
-    )
+    return Geozone.objects.filter(geometry__covers=point).order_by("id").first()
 
 
 def create_check(*, device_id: str, lat: float, lon: float) -> CheckResult:

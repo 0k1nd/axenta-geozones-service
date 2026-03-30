@@ -2,16 +2,9 @@ from django.db import models
 
 
 class Check(models.Model):
-    device_id = models.CharField(
-        max_length=255,
-        verbose_name='Строковый идентификатор устройства'
-    )
-    lat = models.FloatField(
-        verbose_name='Широта'
-    )
-    lon = models.FloatField(
-        verbose_name='Долгота'
-    )
+    device_id = models.CharField(max_length=255, verbose_name="Строковый идентификатор устройства")
+    lat = models.FloatField(verbose_name="Широта")
+    lon = models.FloatField(verbose_name="Долгота")
     matched_geozone = models.ForeignKey(
         "geozones.Geozone",
         null=True,

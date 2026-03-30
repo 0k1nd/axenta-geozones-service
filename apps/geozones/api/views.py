@@ -1,4 +1,3 @@
-from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema_view
 from rest_framework import generics
 from rest_framework.response import Response
@@ -27,6 +26,7 @@ class GeozoneListCreateView(generics.ListCreateAPIView):
     queryset = Geozone.objects.all()
     serializer_class = GeozoneSerializer
 
+
 @extend_schema_view(
     get=check_list_schema,
 )
@@ -34,6 +34,7 @@ class CheckListView(generics.ListAPIView):
     queryset = Check.objects.select_related("matched_geozone")
     serializer_class = CheckSerializer
     filterset_class = CheckFilter
+
 
 @extend_schema_view(
     post=check_create_schema,

@@ -1,7 +1,4 @@
 from .checks import Check
 from .geozones import Geozone
 
-__all__ = [
-    'Geozone',
-    'Check'
-]
+__all__ = ["Geozone", "Check"]

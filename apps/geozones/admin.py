@@ -31,11 +31,17 @@ class CheckAdmin(admin.ModelAdmin):
     ordering = ("-created_at",)
 
     fieldsets = (
-        ("Данные точки", {
-            "fields": ("device_id", "lat", "lon"),
-        }),
-        ("Результат проверки", {
-            "fields": ("matched_geozone", "inside", "created_at"),
-        }),
+        (
+            "Данные точки",
+            {
+                "fields": ("device_id", "lat", "lon"),
+            },
+        ),
+        (
+            "Результат проверки",
+            {
+                "fields": ("matched_geozone", "inside", "created_at"),
+            },
+        ),
     )
     readonly_fields = ("created_at",)

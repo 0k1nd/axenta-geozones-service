@@ -12,8 +12,7 @@ from apps.geozones.api.serializers import (
 )
 
 WAREHOUSE_WKT = (
-    "POLYGON((37.6173 55.7558, 37.6183 55.7558, "
-    "37.6183 55.7568, 37.6173 55.7568, 37.6173 55.7558))"
+    "POLYGON((37.6173 55.7558, 37.6183 55.7558, 37.6183 55.7568, 37.6173 55.7568, 37.6173 55.7558))"
 )
 
 WAREHOUSE_WKT_RESPONSE = (
@@ -31,8 +30,7 @@ geozone_create_schema = extend_schema(
     tags=["Geozones"],
     summary="Создать геозону",
     description=(
-        "Создает геозону по WKT-геометрии. "
-        "Ожидается POLYGON в системе координат WGS84 (SRID 4326)."
+        "Создает геозону по WKT-геометрии. Ожидается POLYGON в системе координат WGS84 (SRID 4326)."
     ),
     request=GeozoneSerializer,
     responses={
@@ -101,8 +99,7 @@ check_create_schema = extend_schema(
     tags=["Checks"],
     summary="Проверить точку",
     description=(
-        "Проверяет, попадает ли точка устройства в геозону, "
-        "и сохраняет результат проверки."
+        "Проверяет, попадает ли точка устройства в геозону, и сохраняет результат проверки."
     ),
     request=CheckPointInputSerializer,
     responses={
