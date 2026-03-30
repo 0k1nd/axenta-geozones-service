@@ -62,3 +62,19 @@ POLYGON((50.1200 53.1800, 50.1800 53.1800, 50.1800 53.2200, 50.1200 53.2200, 50.
 ```python
 geometry__covers=point
 ```
+
+## Makefile
+
+Для удобства в проекте добавлен `Makefile`.
+
+Примеры команд:
+
+```bash
+make up
+make test
+make migrate
+make lint
+make fix
+make pre-commit
+make schema
+```

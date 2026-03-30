@@ -1,5 +1,5 @@
 from drf_spectacular.utils import extend_schema_view
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.response import Response
 
 from apps.geozones.api.filters import CheckFilter
@@ -47,6 +47,6 @@ class CheckCreateView(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
 
         result = create_check(**serializer.validated_data)
-
         output = CheckSerializer(result.check)
-        return Response(output.data)
+
+        return Response(output.data, status=status.HTTP_201_CREATED)
